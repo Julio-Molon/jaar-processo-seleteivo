@@ -1,0 +1,72 @@
+<h1 class="pageDescription">Cadastro de veículo</h1>
+<div class="wrapper">
+  <div *ngIf="data?.gasOptions">
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Opções de combustivel</mat-label>
+        <mat-select [(ngModel)]="gasOption" (selectionChange)="handleChageGasOption($event.value)">
+          <mat-option *ngFor="let option of data?.gasOptions" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div [formGroup]="carForm">
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Código Fipe</mat-label>
+        <input matInput formControlName="fipe">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Valor</mat-label>
+        <input matInput formControlName="valor">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Marca</mat-label>
+        <input matInput formControlName="marca">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Modelo</mat-label>
+        <input matInput formControlName="modelo">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>AnoModelo</mat-label>
+        <input matInput formControlName="anoModelo">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Combustível</mat-label>
+        <input matInput formControlName="combustivel">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Placa</mat-label>
+        <input matInput formControlName="placa">
+      </mat-form-field>
+    </div>
+
+    <button [disabled]="!carForm.valid" class="btn-incluir" mat-raised-button color="primary" (click)="handleAddCar()"
+      aria-label="Incluir">
+      <mat-icon>add</mat-icon>
+      <span>Incluir</span>
+    </button>
+  </div>
+</div>

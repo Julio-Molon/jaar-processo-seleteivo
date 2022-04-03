@@ -1,0 +1,89 @@
+<h1 class="pageDescription">Cadastro de veículo</h1>
+<div class="wrapper">
+  <mat-spinner style="margin-bottom: 8px;" *ngIf="loading"></mat-spinner>
+  <form [hidden]="loading" [formGroup]="carForm">
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Código Fipe</mat-label>
+        <input readonly="true" matInput formControlName="fipe">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Valor</mat-label>
+        <input readonly="true" matInput formControlName="valor">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Marca</mat-label>
+        <input readonly="true" matInput formControlName="marca">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="16">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Modelo</mat-label>
+        <input readonly="true" matInput formControlName="modelo">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>AnoModelo</mat-label>
+        <input readonly="true" matInput formControlName="anoModelo">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="16">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Combustível</mat-label>
+        <input readonly="true" matInput formControlName="combustivel">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Sigla Combustível</mat-label>
+        <input readonly="true" matInput formControlName="siglaCombustivel">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Tipo Veículo</mat-label>
+        <input readonly="true" matInput formControlName="tipoVeiculo">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Mês Refêrencia</mat-label>
+        <input readonly="true" matInput formControlName="mesReferencia">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Data Consulta</mat-label>
+        <input readonly="true" matInput formControlName="dataConsulta">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Placa</mat-label>
+        <input readonly="true" matInput formControlName="placa">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="16" style="padding-bottom: 16px;">
+      <button class="btn-incluir" mat-raised-button color="primary" (click)="handleUpateCar()" aria-label="Incluir">
+        <mat-icon>find_replace</mat-icon>
+        <span>Atualizar</span>
+      </button>
+      <button class="btn-incluir" mat-raised-button color="warn" (click)="handleDeleteCar()" aria-label="Incluir">
+        <mat-icon>delete</mat-icon>
+        <span>Excluir</span>
+      </button>
+    </div>
+  </form>
+</div>

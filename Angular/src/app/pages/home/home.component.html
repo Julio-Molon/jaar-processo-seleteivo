@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <h1 class="pageDescription">Consulta de tabela FIPE</h1>
+  <main class="mainContainer">
+
+
+
+    <div class="searchform" [formGroup]="searchForm">
+      <div fxLayout="row" fxLayoutAlign="start start">
+        <mat-form-field appearance="outline" fxFlex="1 0 25">
+          <mat-label>Código FIPE</mat-label>
+          <input matInput formControlName="codigoFipe">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start start">
+        <mat-form-field appearance="outline" fxFlex="1 0 25">
+          <mat-label>Ano Referência</mat-label>
+          <input matInput formControlName="anoReferencia">
+        </mat-form-field>
+      </div>
+
+      <mat-spinner style="margin-bottom: 8px;" *ngIf="loading"></mat-spinner>
+
+      <button [disabled]="!searchForm.valid || loading" class="btn-consultar" mat-raised-button color="primary"
+        (click)="handleSearch()" aria-label="Consultar">
+        <mat-icon>search</mat-icon>
+        <span>Consultar</span>
+      </button>
+    </div>
+  </main>
+
+</div>

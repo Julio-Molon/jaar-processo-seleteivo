@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <h1 class="pageDescription">Consulta de veículo via Placa</h1>
+  <main class="mainContainer">
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" fxFlex="1 0 25">
+        <mat-label>Placa</mat-label>
+        <input matInput [formControl]="placa">
+      </mat-form-field>
+    </div>
+
+    <button class="btn-consultar" mat-raised-button color="primary" (click)="handleSearch()" aria-label="Consultar">
+      <mat-icon>search</mat-icon>
+      <span>Consultar</span>
+    </button>
+  </main>
+
+</div>
